@@ -1,0 +1,21 @@
+botellas(0) :-
+    write('No more bottles of beer on the wall, no more bottles of beer.'),nl,
+    write('Go to the store and buy some more, 99 bottles of beer on the wall.'),nl.
+
+botellas(B) :-
+    B > 0,
+    format('~d bottle of beer on the wall, ~d bottle of beer',[B,B]),nl,
+    write('Take one down and pass it around, '),
+    Bact is B-1,
+    write('no more bottles of beer on the wall.'),nl,
+    (Bact > 0 ->
+        format('~d bottles of beer on the wall.', [Bact]),nl,nl;
+        write('no more bottles of beer on the wall.'),nl,nl,
+    ),
+    botellas(Bact).
+
+
+
+
+
+
